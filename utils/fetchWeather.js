@@ -9,19 +9,18 @@ export const fetchWeather = async (city) => {
   const data = await response.json();
   return {
     city: data.location.name,
-      country: data.location.country,
-      description: data.current.condition.text,
-      temp_c: data.current.temp_c,
-      temp_f: data.current.temp_f,
-      icon: data.current.condition.icon,
-      wind_kph: data.current.wind_kph,
-      wind_dir: data.current.wind_dir,
-      humidity: data.current.humidity,
-      cloud: data.current.cloud,
-      uv: data.current.uv,
-      heatindex_c: data.current.heatindex_c,
-      windchill_c: data.current.windchill_c,
-      gust_kph: data.current.gust_kph,
+    country: data.location.country,
+    description: data.current.condition.text,
+    temp_c: data.current.temp_c,
+    temp_f: data.current.temp_f,
+    humidity: data.current.humidity,
+    wind_kph: data.current.wind_kph,
+    wind_dir: data.current.wind_dir,
+    gust_kph: data.current.gust_kph,
+    uv: data.current.uv,
+    heatindex_c: data.current.heatindex_c,
+    windchill_c: data.current.windchill_c,
+    cloud: data.current.cloud,
   };
 };
 
