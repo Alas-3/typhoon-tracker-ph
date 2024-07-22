@@ -9,7 +9,11 @@ const WeatherCard = ({ weather }) => {
     <div className="card bg-gray-800 text-white shadow-2xl p-6 rounded-lg max-w-sm mx-auto sm:max-w-md md:max-w-lg lg:max-w-4xl">
       <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-6">
         <div className="flex justify-center lg:justify-center lg:w-1/3 mb-4 lg:mb-0 lg:items-center lg:relative lg:top-1/2 lg:-translate-y-1/2">
-          <img src={weather.icon} alt={weather.description} className="w-24 h-24 lg:w-32 lg:h-32" />
+          <img 
+            src={weather.icon} 
+            alt={weather.description} 
+            className="w-24 h-24 lg:w-32 lg:h-32 object-contain" 
+          />
         </div>
         <div className="lg:w-2/3">
           <h2 className="text-2xl font-bold mb-4 text-center lg:text-left">{weather.city}, {weather.country}</h2>

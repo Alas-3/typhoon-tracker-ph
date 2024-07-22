@@ -13,6 +13,7 @@ export const fetchWeather = async (city) => {
     description: data.current.condition.text,
     temp_c: data.current.temp_c,
     temp_f: data.current.temp_f,
+    icon: data.current.condition.icon,
     humidity: data.current.humidity,
     wind_kph: data.current.wind_kph,
     wind_dir: data.current.wind_dir,
