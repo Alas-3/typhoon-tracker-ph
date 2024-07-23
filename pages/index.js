@@ -12,14 +12,19 @@ const Home = () => {
   const [alert, setAlert] = useState('');
 
   const fetchData = async (city) => {
-    const weatherData = await fetchWeather(city);
-    setWeather(weatherData);
+    try {
+      const weatherData = await fetchWeather(city);
+      setWeather(weatherData);
 
-    const forecastData = await fetchForecast(city);
-    setForecast(forecastData);
+      const forecastData = await fetchForecast(city);
+      console.log('Fetched forecast data:', forecastData); // Log to check the data
+      setForecast(forecastData);
 
-    if (weatherData.description.toLowerCase().includes('rain')) {
-      setAlert('🌧️ It\'s raining in your area ☔');
+      if (weatherData.description.toLowerCase().includes('rain')) {
+        setAlert('🌧️ It\'s raining in your area ☔');
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
     }
   };
 

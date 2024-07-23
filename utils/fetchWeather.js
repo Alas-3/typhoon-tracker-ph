@@ -26,21 +26,21 @@ export const fetchWeather = async (city) => {
 };
 
 export const fetchForecast = async (city, days = 3) => {
-    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=${days}`);
-    if (!response.ok) {
-      throw new Error('Failed to fetch forecast data');
-    }
-    const data = await response.json();
-    console.log(data); // Log the data to inspect the structure
-    return data.forecast.forecastday.map((day) => ({
-      date: day.date,
-      description: day.day.condition.text,
-      temp: day.day.avgtemp_c,
-      humidity: day.day.avghumidity,
-      wind: day.day.maxwind_kph,
-      icon: day.day.condition.icon,
-    }));
-  };
+  const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=${days}`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch forecast data');
+  }
+  const data = await response.json();
+  console.log('Forecast data:', data); // Log the data to inspect the structure
+  return data.forecast.forecastday.map((day) => ({
+    date: day.date,
+    description: day.day.condition.text,
+    temp: day.day.avgtemp_c,
+    humidity: day.day.avghumidity,
+    wind: day.day.maxwind_kph,
+    icon: day.day.condition.icon,
+  }));
+};
   
 
 /*export const fetchTyphoons = async () => {

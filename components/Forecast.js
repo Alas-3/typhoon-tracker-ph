@@ -6,7 +6,7 @@ const Forecast = ({ forecast }) => {
     <div className="forecast grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       {forecast.map((day, index) => (
         <div key={index} className="forecast-card bg-gray-700 text-white shadow-lg p-4 rounded-lg flex flex-col items-center">
-          <h3 className="text-lg font-semibold mb-2">{day.date}</h3>
+          <h3 className="text-lg font-semibold mb-2">{new Date(day.date).toLocaleDateString()}</h3>
           <div className="flex items-center mb-2">
             <img src={day.icon} alt={day.description} className="w-12 h-12 md:w-16 md:h-16" />
             <p className="ml-2 text-sm md:text-base">{day.description}</p>
